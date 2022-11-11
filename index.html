@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/f3e46c7d27.js" crossorigin="anonymous"></script>
+  <title>Instagram Photo Feed with Bootstrap</title>
+</head>
+
+<body class="vh-100">
+  <!--NAVBAR-->
+  <nav class="d-flex bg-light d-flex">
+    <div class="p-2 flex-grow-1 fs-4"><i class="fa-brands fa-instagram px-2"></i>Instagram</div>
+    <div class="p-2">
+      <button type="button" class="btn bg-success text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Create a new post
+      </button>
+      <!-- Modal abierto-->
+      <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="caption-text" class="form-label fw-bold">Caption:</label>
+                  <textarea type="text" class="form-control" id="caption-text"
+                    placeholder="Add the caption of your post here"></textarea>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-camera"></i></button>
+                  <button class="btn btn-outline-secondary" type="button"><i
+                      class="fa-solid fa-location-dot"></i></button>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Publish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--desplegable-->
+    <div class="p-2">
+      <li class="nav-item dropdown d-flex bg-secondary btn">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Accesibility</a></li>
+          <li><a class="dropdown-item" href="#">Privacy and data</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+        </ul>
+      </li>
+    </div>
+  </nav>
+  <!--FINAL NAVBAR-->
+  <!--BOTONES-->
+  <div class="container">
+    <div class="row py-3">
+      <ul class="nav nav-pills justify-content-md-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid" type="button"
+            role="tab" aria-controls="grid" aria-selected="true"><i class="fa-solid fa-table-cells"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab"
+            aria-controls="list" aria-selected="false"><i class="fa-solid fa-square"></i></button>
+        </li>
+      </ul>
+    </div>
+    <!--contenido tabs-->
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
+        <!--aqui comienza -->
+        <div class="row row-cols-2 row-cols-md-3 gx-2 py-2 row-eq-height">
+          <div class="d-flex">
+            <img src="https://picsum.photos/500" class="img-fluid" alt="...">
+          </div>
+          <div class="d-flex">
+            <img src="https://picsum.photos/550" class="img-fluid" alt="...">
+          </div>
+          <div class="d-flex">
+            <img src="https://picsum.photos/560" class="img-fluid" alt="...">
+          </div>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 gx-2 py-2 row-eq-height">
+          <div class="d-flex">
+            <img src="https://picsum.photos/1024/600" class="img-fluid" alt="...">
+          </div>
+          <div class="d-flex">
+            <img src="https://picsum.photos/800/600" class="img-fluid" alt="...">
+          </div>
+          <div class="d-flex">
+            <img src="https://picsum.photos/768/640" class="img-fluid" alt="...">
+          </div>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 gx-2 py-2 row-eq-height">
+          <div class="d-flex">
+            <img src="https://picsum.photos/900/500" class="img-fluid" alt="...">
+          </div>
+          <div class="d-flex">
+            <img src="https://picsum.photos/500/800" class="img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
+        <div class="row row-cols-2 justify-content-md-center py-3">
+          <!--post x-->
+          <div class="col-8 my-3">
+            <div class="d-flex border rounded-top p-2">
+              <div class="flex-grow-1">
+                <h3>Primera foto</h3>
+              </div>
+              <div class="align-middle"><span>11/14</span></div>
+            </div>
+            <div class="">
+              <img class="img-fluid" src="https://picsum.photos/1024/600">
+            </div>
+            <div class="border rounded-bottom p-2">
+              <p class="fw-bold">215 Likes</p>
+              <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in nulla
+                turpis. Aliquam id auctor magna. Nunc id nisi vel enim suscipit consequat maximus id quam. Fusce et
+                purus vel dolor egestas ultrices. Suspendisse at metus et mauris malesuada malesuada. Sed nec justo
+                eleifend, elementum leo et, placerat sapien. Suspendisse ac luctus lacus. Curabitur tristique lacus
+                at nulla lacinia, efficitur semper diam auctor.
+                <span class="fw-bold">#nice #cool</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-8 my-3">
+            <div class="d-flex border rounded-top p-2">
+              <div class="flex-grow-1">
+                <h3>Segunda foto</h3>
+              </div>
+              <div class="align-middle"><span>12/14</span></div>
+            </div>
+            <div class="">
+              <img class="img-fluid" src="https://picsum.photos/800/600">
+            </div>
+            <div class="border rounded-bottom p-2">
+              <p class="fw-bold">215 Likes</p>
+              <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in nulla
+                turpis. Aliquam id auctor magna. Nunc id nisi vel enim suscipit consequat maximus id quam. Fusce et
+                purus vel dolor egestas ultrices. Suspendisse at metus et mauris malesuada malesuada. Sed nec justo
+                eleifend, elementum leo et, placerat sapien. Suspendisse ac luctus lacus. Curabitur tristique lacus
+                at nulla lacinia, efficitur semper diam auctor.
+                <span class="fw-bold">#nice #cool</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
